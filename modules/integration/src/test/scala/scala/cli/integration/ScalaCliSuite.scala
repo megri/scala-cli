@@ -3,10 +3,7 @@ package scala.cli.integration
 abstract class ScalaCliSuite extends munit.FunSuite {
   def group: ScalaCliSuite.TestGroup = ScalaCliSuite.TestGroup.Third
 
-  override def munitIgnore: Boolean =
-    Option(System.getenv("SCALA_CLI_IT_GROUP"))
-      .flatMap(_.toIntOption)
-      .exists(_ != group.idx)
+  override def munitIgnore: Boolean = false
 }
 
 object ScalaCliSuite {
